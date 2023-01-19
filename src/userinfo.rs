@@ -74,5 +74,6 @@ pub struct Userinfo {
     pub address: Option<Address>,
     #[serde(default)]
     /// Time the End-User's information was last updated. Its value is a JSON number representing the number of seconds from 1970-01-01T0:0:0Z as measured in UTC until the date/time.
-    pub updated_at: Option<i64>,
+    /// for some reasons auth0 provides date-time as 2023-01-01... format, therefore changed from i64 to String
+    pub updated_at: Option<String>,
 }
